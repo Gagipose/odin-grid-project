@@ -6,6 +6,11 @@
     list-style-type: none;
 }
 
+/* profile pics universally round */
+img.profile-pic {
+    border-radius: 50%;
+}
+
 /* the coumns on left and right take up less space */
 body {
     display: grid;
@@ -65,7 +70,7 @@ nav > h2,
 .optionsMenu {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
     padding-left: 10%;
     justify-content: space-around;
     overflow-wrap: break-word;
@@ -79,12 +84,12 @@ header {
     grid-template-columns: repeat(8, calc(100% / 8));
     grid-template-rows: 50% 50%;
 }
-
+/* tidies up spacing next to items */
 header >* {
     border: 2px solid orange;
 }
 
-.search-bar {
+.search-area {
     grid-column: 1 / 6;
     grid-row: 1 / 2;
 }
@@ -105,3 +110,45 @@ header >* {
 }
 
 /* adjusting layout inside of header children */
+
+/* padding fix */
+
+.search-area, 
+.user-hello {
+    padding-left: 2vw;
+}
+
+.file-buttons,
+.user-top-menu {
+    padding-right: 4vw;
+}
+
+/* search-area layout */
+
+.search-area {
+    display: flex;
+    align-items: center;
+}
+
+.search-with-icon {
+    display: flex;
+    flex: 1; /*search bar expands 100%*/
+    gap: 1.5vw;
+}
+
+#search {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e3e8f0;
+}
+
+/* user-top-menu layout */
+
+.user-top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 1.5vw;
+}
