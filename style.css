@@ -70,3 +70,38 @@ nav > h2,
     justify-content: space-around;
     overflow-wrap: break-word;
 }
+
+
+/* header layout */
+
+header {
+    display: grid;
+    grid-template-columns: repeat(8, calc(100% / 8));
+    grid-template-rows: 50% 50%;
+}
+
+header >* {
+    border: 2px solid orange;
+}
+
+.search-bar {
+    grid-column: 1 / 6;
+    grid-row: 1 / 2;
+}
+
+.user-top-menu {
+    grid-column: 6 / 9;
+    grid-row: 1 / 2;
+}
+
+.user-hello {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+}
+
+.file-buttons {
+    grid-column: 5 / 9;
+    grid-row: 2 / 3;
+}
+
+/* adjusting layout inside of header children */
