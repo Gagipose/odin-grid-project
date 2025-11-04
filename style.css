@@ -40,7 +40,11 @@ body {
     grid-template-rows: repeat(14, calc(100vh / 14));
 }
 
-/* website layout */
+/* had to add bg color to body so header shadow would show after margin was added */
+body {
+    background-color: var(--grey);
+}
+
 body > nav {
     grid-column: 1 / 2;
     grid-row: 1 / 15;
@@ -87,7 +91,8 @@ nav > h2,
     overflow-wrap: anywhere;
     padding-left: 10%;
     /* colors */
-    color: var(--white); 
+    color: var(--white);
+    font-weight: 500;
 }
 
 
@@ -97,6 +102,9 @@ header {
     display: grid;
     grid-template-columns: repeat(8, calc(100% / 8));
     grid-template-rows: 50% 50%;
+    background-color: var(--white);
+    box-shadow: 2px 2px 5px #c6c6c6;
+    margin-bottom: 10px; /*need margin, otherwise main overlaps the shadow*/
 }
 
 /* padding fix */
@@ -208,18 +216,20 @@ main {
 
 #projects-section {
     display: grid;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 45px 1fr;
+}
+
+#side-info-section {
+    display: grid;
+    grid-template-rows: 45px 1fr 45px 1fr;
 }
 
 main > * h4 {
     display: flex;
     align-items: end;
-    font-size: 20px;
-}
-
-#side-info-section {
-    display: grid;
-    grid-template-rows: 60px 1fr 60px 1fr;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 7px;
 }
 
 .projects {
@@ -233,6 +243,7 @@ main > * h4 {
 .trending {
     background-color: var(--white);
     border-radius: 10px;
+    box-shadow: 2px 2px 5px #c6c6c6;
 }
 
 .projects >* {
@@ -241,7 +252,7 @@ main > * h4 {
 
 .announcments >* {
     margin: 20px;
-    border-bottom: 1px solid rgb(179, 179, 179);
+    border-bottom: 1px solid #c6c6c6;
 }
 
 /* === Typography === */
