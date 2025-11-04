@@ -1,3 +1,5 @@
+/* === Base === */
+
 :root {
     --gap-small: 1.5vw;
 }
@@ -10,29 +12,24 @@
     list-style-type: none;
 }
 
-/* profile pics universally round */
 img.profile-pic {
     border-radius: 50%;
 }
 
-/* the coumns on left and right take up less space */
+/* === Page Grid === */
+/* the columns on left and right take up less space */
 body {
     display: grid;
     grid-template-columns: 20fr repeat(4, calc(60vw / 4)) 20fr;
     grid-template-rows: repeat(14, calc(100vh / 14));
 }
 
-/* outline main parts for easier edit */
-body > nav, 
-body > header, 
-body > main {
-    border: 3px solid grey;
-}
-
 /* website layout */
 body > nav {
     grid-column: 1 / 2;
     grid-row: 1 / 15;
+    display: grid;
+    grid-template-rows: repeat(13, calc(100vh / 13 * 0.6)) 1fr;
 }
 
 body > header {
@@ -45,16 +42,8 @@ body > main {
     grid-row: 4 / 15;
 }
 
+/* === Navigation === */
 /* navigation menu layout tar upp 60% och har 13 delar, blankspace på resten */
-body > nav {
-    display: grid;
-    grid-template-rows: repeat(13, calc(100vh / 13 * 0.6)) 1fr;
-}
-
-nav >* {
-    border: 2px solid blue;
-}
-
 nav > h2 {
     grid-row: 1 / 3;
 }
@@ -68,57 +57,39 @@ nav > .optionsMenu {
 }
 
 /* Spacing out inside of nav parents */
-
 nav > h2,
 .workMenu,
 .optionsMenu {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 10%;
     justify-content: space-around;
+    align-items: flex-start;
     overflow-wrap: anywhere;
+    padding-left: 10%;
 }
 
-
+/* === Header === */
 /* header layout */
-
 header {
     display: grid;
     grid-template-columns: repeat(8, calc(100% / 8));
     grid-template-rows: 50% 50%;
 }
-/* tidies up spacing next to items */
-header >* {
-    border: 2px solid orange;
-}
-
-.search-area {
-    grid-column: 1 / 6;
-    grid-row: 1 / 2;
-}
-
-.user-top-menu {
-    grid-column: 6 / 9;
-    grid-row: 1 / 2;
-}
-
-.user-hello {
-    grid-column: 1 / 4;
-    grid-row: 2 / 3;
-}
-
-.file-buttons {
-    grid-column: 5 / 9;
-    grid-row: 2 / 3;
-}
-
-/* adjusting layout inside of header children */
 
 /* padding fix */
+.search-area {
+    display: flex;
+    align-items: center;
+    column-gap: var(--gap-small);
+    padding-left: 2vw;
+}
 
-.search-area, 
 .user-hello {
+    display: grid;
+    grid-template-columns: 1fr 20fr; /* making sure pic gets minimum space */
+    column-gap: var(--gap-small);
+    justify-items: left;
+    align-items: center;
     padding-left: 2vw;
 }
 
@@ -128,15 +99,9 @@ header >* {
 }
 
 /* search-area layout */
-
-.search-area {
-    display: flex;
-    align-items: center;
-}
-
 .search-with-icon {
     display: flex;
-    flex: 1; /*search bar expands 100%*/
+    flex: 1; /* search bar expands 100% */
     column-gap: var(--gap-small);
 }
 
@@ -149,7 +114,6 @@ header >* {
 }
 
 /* user-top-menu layout */
-
 .user-top-menu {
     display: flex;
     align-items: center;
@@ -158,8 +122,7 @@ header >* {
 }
 
 /* file-buttons & its children layout */
-
-.file-buttons >* {
+.file-buttons > * {
     border: none;
     background-color: lightblue;
     border-radius: 20px;
@@ -173,20 +136,21 @@ header > .file-buttons {
     justify-items: center;
     align-items: center;
     gap: 15px;
-    /* padding-left: clamp(0vw, 10vw, 10vw); */
     padding-left: 10vw;
+    padding-right: 4vw;
 }
 
 /* user-hello layout & its children */
-
 header > .user-hello {
     display: grid;
-    grid-template-columns: 1fr 20fr; /*making sure pic gets minimum space*/
+    grid-template-columns: 1fr 20fr; /* making sure pic gets minimum space */
     column-gap: var(--gap-small);
     justify-items: left;
     align-items: center;
+    padding-left: 2vw;
 }
 
+/* === Main === */
 /* main / project & children */
 main {
     display: grid;
@@ -201,9 +165,10 @@ main {
     grid-template-rows: 60px 1fr;
 }
 
-main >* h4 {
+main > * h4 {
     display: flex;
     align-items: end;
+    font-size: 20px;
 }
 
 #side-info-section {
@@ -217,27 +182,37 @@ main >* h4 {
     gap: 2.5vh 2vw;
 }
 
-.projects >* {
-    border: 1px solid rgb(30, 93, 25);
-}
-
-
-#side-info-section >* {
-    border: 1px solid rgb(163, 19, 19);
-}
-
-/* FONTS AND TEXT */
-
+/* === Typography === */
 h3 {
     font-size: 25px;
 }
 
-main >* h4 {
-    font-size: 20px;
+/* === Debug Helpers (remove when done) === */
+/* outline main parts for easier edit */
+body > nav,
+body > header,
+body > main {
+    border: 3px solid grey;
 }
 
-/* MEDIA QUERIES */
+nav > * {
+    border: 2px solid blue;
+}
 
+/* tidies up spacing next to items */
+header > * {
+    border: 2px solid orange;
+}
+
+.projects > * {
+    border: 1px solid rgb(30, 93, 25);
+}
+
+#side-info-section > * {
+    border: 1px solid rgb(163, 19, 19);
+}
+
+/* === Media Queries === */
 @media (max-width: 1200px) {
     header > .file-buttons {
         padding: 0;
