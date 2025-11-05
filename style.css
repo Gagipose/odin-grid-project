@@ -210,6 +210,7 @@ main {
     gap: 20px;
     padding-right: 20px;
     padding-left: 20px;
+    padding-bottom: 30px;
     /* visuals */
     background-color: var(--grey);
 }
@@ -253,6 +254,27 @@ main > * h4 {
 .announcments >* {
     margin: 20px;
     border-bottom: 1px solid #c6c6c6;
+}
+
+.projects > li {
+    display: grid;
+    grid-template-rows: 80% 20%;
+    padding: 30px 20px;
+}
+
+.projects h6 {
+    padding-bottom: 5px;
+}
+
+.projects p {
+    color: rgb(99, 99, 99);
+}
+
+.project-icons {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 2vw;
 }
 
 .project-icons > img {
