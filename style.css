@@ -221,8 +221,15 @@ main {
 }
 
 #side-info-section {
-    display: grid;
-    grid-template-rows: 45px 1fr 45px 1fr;
+    /* display: grid;
+    grid-template-rows: 45px 1fr 45px 1fr; */
+    display: flex;
+    flex-direction: column;
+}
+
+#side-info-section > :nth-child(odd) {
+    height: 45px;
+    flex-shrink: 0;
 }
 
 main > * h4 {
@@ -251,10 +258,6 @@ main > * h4 {
     border-left: 10px solid var(--yellow);
 }
 
-.announcments >* {
-    margin: 20px;
-    border-bottom: 1px solid #c6c6c6;
-}
 
 .projects > li {
     display: grid;
@@ -262,12 +265,27 @@ main > * h4 {
     padding: 30px 20px;
 }
 
-.projects h6 {
+.announcments > li {
+    display: grid;
+    margin: 20px 20px; /*need to use margin to stop line from expanding*/
+}
+
+.projects h6,
+.announcments h6 {
     padding-bottom: 5px;
 }
 
-.projects p {
+.projects p,
+.announcments p {
     color: rgb(99, 99, 99);
+}
+
+.announcments p {
+    padding-bottom: 20px;
+}
+
+.announcments >* {
+    border-bottom: 1px solid #c6c6c6;
 }
 
 .project-icons {
@@ -281,6 +299,14 @@ main > * h4 {
     width: 21px;
 }
 
+/* EXTRA BUGFIXES */
+.announcments > :last-child {
+    border-bottom: none; /*third line gets removed*/
+}
+
+p.paddingFix {
+    padding-bottom: 0; 
+}
 /* === Typography === */
 h3 {
     font-size: 25px;
