@@ -255,6 +255,10 @@ main > * h4 {
     border-bottom: 1px solid #c6c6c6;
 }
 
+.project-icons > img {
+    width: 21px;
+}
+
 /* === Typography === */
 h3 {
     font-size: 25px;
