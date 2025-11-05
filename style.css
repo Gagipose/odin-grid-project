@@ -264,6 +264,11 @@ h3 {
     font-size: 25px;
 }
 
+h6 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
 /* === Debug Helpers (remove when done) === */
 /* outline main parts for easier edit */
 /* body > nav,
