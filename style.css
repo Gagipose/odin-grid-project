@@ -68,7 +68,7 @@ nav {
     background-color: var(--blue);
 }
 
-nav > h2 {
+nav > .dashboard-title {
     grid-row: 1 / 3;
 }
 
@@ -80,7 +80,7 @@ nav > h2 {
     grid-row: 11 / 14;
 }
 
-nav > h2,
+nav > .dahsboard-group,
 .workMenu,
 .optionsMenu {
     /* Spacing out inside of nav parents */
@@ -95,6 +95,34 @@ nav > h2,
     font-weight: 500;
 }
 
+.WorkItems,
+.optionItems {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+}
+
+.WorkItems img,
+.optionItems img {
+    height: 20px;
+    filter: invert();
+}
+
+.dahsboard-group {
+    padding-top: 20px;
+}
+
+.dashboard-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.dashboard-title img {
+    height: 40px;  /*change back size later, #bugfix for now*/
+    filter: invert();
+}
 
 /* === Header === */
 /* header layout */
