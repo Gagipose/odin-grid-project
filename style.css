@@ -303,8 +303,7 @@ main > * h4 {
     padding-bottom: 5px;
 }
 
-.projects p,
-.announcments p {
+main p {
     color: rgb(99, 99, 99);
 }
 
@@ -325,6 +324,23 @@ main > * h4 {
 
 .project-icons > img {
     width: 21px;
+}
+
+.trending img {
+    width: 50px;
+}
+
+.trending > li {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-small);
+}
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
 }
 
 /* EXTRA BUGFIXES */
